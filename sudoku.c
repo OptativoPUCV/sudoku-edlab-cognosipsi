@@ -56,16 +56,15 @@ int is_valid(Node* n){
         for (x = 0 ; x < 9 ; x++) {
             aux = n->sudo[x][y];
             if (n->sudo[x][y] != 0) {
-                ;
-            }
-            for (i = 0 ; i < 9 ; i++) {
-                if ((i != x) && (n->sudo[i][y] == aux)) {
-                    return 0;
+                for (i = 0 ; i < 9 ; i++) {
+                    if ((i != x) && (n->sudo[i][y] == aux)) {
+                        return 0;
+                    }
                 }
-            }
-            for (j = 0 ; j < 9 ; j++) {
-                if ((j != y) && (n->sudo[x][j] == aux)) {
-                    return 0;
+                for (j = 0 ; j < 9 ; j++) {
+                    if ((j != y) && (n->sudo[x][j] == aux)) {
+                        return 0;
+                    }
                 }
             }
         }
