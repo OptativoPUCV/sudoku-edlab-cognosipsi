@@ -55,6 +55,21 @@ int is_valid(Node* n){
         for (x = 0 ; x < 9 ; x++) {
             aux = n->sudo[x][y];
             if (n->sudo[x][y] != 0) {
+                for (p = 0 ; p < 9 ; p++) {
+                    i = 3*(k/3) + (p/3) ;
+                    j = 3*(k%3) + (p%3) ;
+                    if ((i != x) && (j != y) && (n->sudo[i][j]) == aux) {
+                        return 0;
+                    }
+                }
+            }
+        }
+    }
+
+    /*for (y = 0 ; y < 9 ; y++) {
+        for (x = 0 ; x < 9 ; x++) {
+            aux = n->sudo[x][y];
+            if (n->sudo[x][y] != 0) {
                 for (i = 0 ; i < 9 ; i++) {
                     if ((i != x) && (n->sudo[i][y] == aux)) {
                         return 0;
@@ -68,13 +83,13 @@ int is_valid(Node* n){
                 for (p = 0 ; p < 9 ; p++) {
                     i = 3*(k/3) + (p/3) ;
                     j = 3*(k%3) + (p%3) ;
-                    if ((i != x)&& (j != y) && (n->sudo[i][j]) == aux) {
+                    if ((i != x) && (j != y) && (n->sudo[i][j]) == aux) {
                         return 0;
                     }
                 }
             }
         }
-    }
+    }*/
     return 1;
 }
 
