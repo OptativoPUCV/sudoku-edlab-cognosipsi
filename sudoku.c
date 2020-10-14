@@ -92,13 +92,6 @@ int is_valid(Node* n){
                         return 0;
                     }
                 }
-                for (p = 0 ; p < 9 ; p++) {
-                    i = 3*(k/3) + (p/3) ;
-                    j = 3*(k%3) + (p%3) ;
-                    if ((i != x) && (j != y) && (n->sudo[i][j]) == aux) {
-                        return 0;
-                    }
-                }
             }
         }
     }*/
@@ -106,7 +99,7 @@ int is_valid(Node* n){
 }
 
 
-List* get_adj_nodes(Node* n){
+List* get_adj_nodes(Node* n) {
     List* list=createList();
     int i;
     int j;
