@@ -51,13 +51,7 @@ int is_valid(Node* n){
     int i;
     int j;
 
-    /*for(p=0;p<9;p++){
-        int i=3*(k/3) + (p/3) ;
-        int j=3*(k%3) + (p%3) ;
-        printf("%d ",n->sudo[i][j]);
-        if(p%3 == 2) printf("\n");
-    }
-
+    /*
     for (y = 0 ; y < 9 ; y++) {
         for (x = 0 ; x < 9 ; x++) {
             aux = n->sudo[x][y];
@@ -74,6 +68,13 @@ int is_valid(Node* n){
                 }
             }
         }
+    }
+    int k=4,p; 
+    for(p=0;p<9;p++){
+        int i=3*(k/3) + (p/3) ;
+        int j=3*(k%3) + (p%3) ;
+        printf("%d ",nodo->sudo[i][j]);
+        if(p%3 == 2) printf("\n");
     }*/
 
     for (y = 0 ; y < 9 ; y++) {
@@ -115,7 +116,7 @@ List* get_adj_nodes(Node* n) {
     for (i = 0; i < 9; i++){
       for (j = 0; j < 9; j++){
         if ( n->sudo[i][j] == 0){
-          for ( num = 1; num <= 10; num++){
+          for ( num = 1; num <= 9; num++){
             n->sudo[i][j] = num;
             if (is_valid (n) ){
               Node *newnode = copy(n);
