@@ -65,10 +65,10 @@ int is_valid(Node* n){
                         return 0;
                     }
                 }
-                for (p = 0 ; p < 3 ; p++) {
+                for (p = 0 ; p < 9 ; p++) {
                     i = 3*(k/3) + (p/3) ;
                     j = 3*(k%3) + (p%3) ;
-                    if ((n->sudo[i][j] != n->sudo[x][y])&&(aux == n->sudo[i][j])) {
+                    if ((i != x)&& (j != y) && (n->sudo[i][j]) == aux) {
                         return 0;
                     }
                 }
