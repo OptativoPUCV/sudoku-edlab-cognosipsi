@@ -46,8 +46,8 @@ int is_valid(Node* n){
     int k = 4;
     int p;
     int aux;
-    int x = 0;
-    int y = 0;
+    int x;
+    int y;
     int i;
     int j;
 
